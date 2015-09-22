@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.context.ContextLoaderListener;
 
 @Controller
@@ -12,10 +13,13 @@ import org.springframework.web.context.ContextLoaderListener;
 public class HelloController
 {
 	@RequestMapping(value = {"/world"}, method = RequestMethod.GET)
-	public String printWelcome(ModelMap model)
+	public String printWelcome(
+			@RequestParam("name") String name,
+			ModelMap model)
 	{
 		Person p = (Person)ContextLoaderListener.getCurrentWebApplicationContext().getBean("person");
 		model.addAttribute("message", p.getName());
+		model.addAttribute("name", name);
 		return "hello";
 	}
 }
