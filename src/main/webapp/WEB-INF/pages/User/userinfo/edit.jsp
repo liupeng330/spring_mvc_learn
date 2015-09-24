@@ -12,16 +12,16 @@
     <title></title>
 </head>
 <body>
-<sf:form modelAttribute="myUserInfo" method="post" enctype="application/x-www-form-urlencoded">
+<sf:form modelAttribute="myUserInfo" method="post" enctype="multipart/form-data">
   lastName: <sf:input path="lastName" id="last_name"/> <br/>
 
   firtName: <sf:input path="firstName" id="first_name"/> <br/>
 
   age: <sf:input path="age" id="age"/> <br/>
-  <sf:errors path="age" cssClass="error"/>
+
+  image: <input name="imageFile" type="file"/>
 
   <input type="submit" value="Submit"/>
-
 </sf:form>
 </body>
 </html>
