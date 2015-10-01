@@ -1,10 +1,17 @@
 package com.springapp.mvc;
 
 
+import javax.validation.constraints.Size;
+
 public class UserInfo
 {
+    @Size(min=3, max = 20, message = "lastName should between 3 and 20")
     private String lastName;
+
+    @Size(min=3, max = 20, message = "lastName should between 3 and 20")
     private String firstName;
+
+    @Size(min=3, max = 20, message = "lastName should between 3 and 20")
     private Integer age;
 
     public void setLastName(String lastName)

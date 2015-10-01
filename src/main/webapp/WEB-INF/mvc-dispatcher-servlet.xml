@@ -12,6 +12,7 @@
         ">
 
     <context:component-scan base-package="com.springapp.mvc"/>
+    <mvc:annotation-driven />
 
     <!--<mvc:resources mapping="/img/**" location="/img/"/>-->
     <!--<mvc:default-servlet-handler/>-->
